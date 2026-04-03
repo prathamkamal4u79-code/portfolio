@@ -49,7 +49,7 @@ const Contact = () => {
               Let's work together
             </h2>
             <h5>
-              <MdCopyright /> 2025 Pratham Kamal
+              <MdCopyright /> 2026 Pratham Kamal
             </h5>
           </div>
         </div>
