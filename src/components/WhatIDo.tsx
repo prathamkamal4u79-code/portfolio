@@ -47,14 +47,8 @@ const WhatIDo = () => {
     <div className="whatIDO" id="services">
       <div className="what-box">
         <h2 className="title">
-          My<span className="hat-h2"></span>
-          <div>
-            Services<span className="do-h2"></span>
-          </div>
+          My Services
         </h2>
-        <p style={{ color: 'white', marginTop: '1rem', fontSize: '1.2rem', maxWidth: '600px', opacity: 0.8 }}>
-          From idea to execution, my process focuses on creativity, efficiency, and impactful results.
-        </p>
       </div>
       <div className="what-box">
         <div className="what-box-in">

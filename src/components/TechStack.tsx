@@ -13,14 +13,11 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  "/images/aftereffects.png",
+  "/images/canva.png",
+  "/images/figma.png",
+  "/images/framer.png",
+  "/images/premiere.png",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
@@ -131,7 +128,7 @@ const TechStack = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const threshold = document
-        .getElementById("work")!
+        .getElementById("services")!
         .getBoundingClientRect().top;
       setIsActive(scrollY > threshold);
     };
