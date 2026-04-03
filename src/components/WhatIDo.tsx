@@ -2,6 +2,25 @@ import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const services = [
+  {
+    title: "Graphic Design",
+    description: "Focus on creating clean, engaging, and purpose driven designs that align with brand identity and audience needs. From social media creatives to posters and digital assests"
+  },
+  {
+    title: "UX Design",
+    description: "Focusing on creating user centered experiences by understanding user needs, improving navigation, and designing smooth, intuitive interactions"
+  },
+  {
+    title: "UI Design",
+    description: "Designing visually appealing and consistent user interfaces that align with brand identity while ensuring clarity, balance, and usability."
+  },
+  {
+    title: "Video Editng",
+    description: "Creating engaging, platform optimized videos with strong pacing, clean cuts, and storytelling to maximize reach and audience retention."
+  }
+];
+
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
   const setRef = (el: HTMLDivElement | null, index: number) => {
@@ -25,14 +44,17 @@ const WhatIDo = () => {
     };
   }, []);
   return (
-    <div className="whatIDO">
+    <div className="whatIDO" id="services">
       <div className="what-box">
         <h2 className="title">
-          W<span className="hat-h2">HAT</span>
+          My<span className="hat-h2"></span>
           <div>
-            I<span className="do-h2"> DO</span>
+            Services<span className="do-h2"></span>
           </div>
         </h2>
+        <p style={{ color: 'white', marginTop: '1rem', fontSize: '1.2rem', maxWidth: '600px', opacity: 0.8 }}>
+          From idea to execution, my process focuses on creativity, efficiency, and impactful results.
+        </p>
       </div>
       <div className="what-box">
         <div className="what-box-in">
@@ -58,96 +80,48 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
+          
+          {services.map((service, idx) => (
+            <div
+              key={idx}
+              className="what-content what-noTouch"
+              ref={(el) => setRef(el, idx)}
+            >
+              <div className="what-border1">
+                <svg height="100%">
+                  {idx === 0 && (
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="100%"
+                      y2="0"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeDasharray="6,6"
+                    />
+                  )}
+                  <line
+                    x1="0"
+                    y1="100%"
+                    x2="100%"
+                    y2="100%"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeDasharray="6,6"
+                  />
+                </svg>
+              </div>
+              <div className="what-corner"></div>
+  
+              <div className="what-content-in">
+                <h3>{`0${idx + 1}`}</h3>
+                <h4>{service.title}</h4>
+                <p>{service.description}</p>
+                <div className="what-arrow"></div>
+              </div>
             </div>
-            <div className="what-corner"></div>
+          ))}
 
-            <div className="what-content-in">
-              <h3>DEVELOP</h3>
-              <h4>Description</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -163,10 +137,11 @@ function handleClick(container: HTMLDivElement) {
     const siblings = Array.from(container.parentElement.children);
 
     siblings.forEach((sibling) => {
-      if (sibling !== container) {
+      if (sibling !== container && sibling.classList.contains("what-content")) {
         sibling.classList.remove("what-content-active");
         sibling.classList.toggle("what-sibling");
       }
     });
   }
 }
+

@@ -8,60 +8,48 @@ const Contact = () => {
         <h3>Contact</h3>
         <div className="contact-flex">
           <div className="contact-box">
-            <h4>Email</h4>
+            <h4>Email me</h4>
             <p>
-              <a href="mailto:example@mail.com" data-cursor="disable">
-                example@mail.com
+              <a href="mailto:prathamkamal4u79@gmail.com" data-cursor="disable">
+                prathamkamal4u79@gmail.com
               </a>
             </p>
-            <h4>Phone</h4>
+            <h4 style={{ marginTop: '2rem' }}>Do You Need A Designer?</h4>
             <p>
-              <a href="tel:+9199999999" data-cursor="disable">
-                +91 99999 99999
-              </a>
+              Request a Quote!
             </p>
           </div>
           <div className="contact-box">
-            <h4>Social</h4>
-            <a
-              href="https://github.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Github <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Linkedin <MdArrowOutward />
-            </a>
-            <a
-              href="https://x.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
-            </a>
+            <h4>About</h4>
+            <p style={{ maxWidth: '300px', lineHeight: '1.6' }}>
+              I’m a passionate designer with a keen eyes of details. Let’s work together.
+            </p>
+            <h4 style={{ marginTop: '2rem' }}>Social</h4>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <a
+                href="https://github.com"
+                target="_blank"
+                data-cursor="disable"
+                className="contact-social"
+              >
+                Github <MdArrowOutward />
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                data-cursor="disable"
+                className="contact-social"
+              >
+                Linkedin <MdArrowOutward />
+              </a>
+            </div>
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Moncy Yohannan</span>
+              Let's work together
             </h2>
             <h5>
-              <MdCopyright /> 2024
+              <MdCopyright /> 2025 Pratham Kamal
             </h5>
           </div>
         </div>
